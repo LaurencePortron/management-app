@@ -1,42 +1,67 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './SelectDropDown.css';
 
 export default function SelectDropdown(props) {
   const [mainIsSelected, setMainIsSelected] = useState(false);
-  const optionList = {
-    project: 'Project',
-    sport: 'Sport',
-    travels: 'Travels',
-    outdoors: 'outdoors',
-  };
-  const [optionSelected, setOptionSelected] = useState(optionList);
+  const [optionSelected, setOptionSelected] = useState('');
 
   const showDropDown = () => {
     setMainIsSelected(true);
   };
 
-  const selectOption = () => {
-    setOptionSelected('Project');
+  const selectOption = (e) => {
+    setOptionSelected(e.target.id);
+  };
+
+  const resetDropDown = () => {
+    setMainIsSelected(false);
   };
 
   return (
-    <div>
-      <div onClick={showDropDown}>
-        {mainIsSelected ? (
-          <div>
-            <div>
-              <strong>Menu</strong>
-            </div>
-            <div>Project</div>
-            <div>cool</div>
-            <div>amazing</div>
-          </div>
-        ) : (
-          <div>
+    <div onClick={showDropDown}>
+      {mainIsSelected ? (
+        <div>
+          <div className='dropdown-menu'>
             <strong>Menu</strong>
           </div>
-        )}
-      </div>
+
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              selectOption(e);
+              resetDropDown();
+            }}
+            id='Project'
+          >
+            Project
+          </div>
+
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              selectOption(e);
+              resetDropDown();
+            }}
+            id='cool'
+          >
+            cool
+          </div>
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              selectOption(e);
+              resetDropDown();
+            }}
+            id='amazing'
+          >
+            amazing
+          </div>
+        </div>
+      ) : (
+        <div>
+          <strong>{optionSelected ? optionSelected : <div>Menu</div>}</strong>
+        </div>
+      )}
     </div>
   );
 }
