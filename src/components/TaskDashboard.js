@@ -46,10 +46,14 @@ export default function Taskdashboard() {
               </tr>
             );
           })}
-          <span onClick={addTableRow}>&#43;</span>
-          <span onClick={removeTableRow}>-</span>
         </tbody>
       </table>
+      <div className='plus' onClick={addTableRow}>
+        +
+      </div>
+      <div className='minus' onClick={removeTableRow}>
+        -
+      </div>
     </>
   );
 }

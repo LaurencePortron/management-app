@@ -1,11 +1,19 @@
 import './App.css';
-// import TaskListNavigation from './components/TaskListNavigation';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import Welcome from './components/Home/Welcome';
 import TaskDashboard from './components/TaskDashboard';
 
 function App() {
   return (
     <div className='App'>
-      <TaskDashboard />
+      <Router>
+        <Link to='/'>Home</Link>
+        <Link to='/dashboards'>Dashboards</Link>
+        <Switch>
+          <Route exact path='/' component={Welcome} />
+          <Route path='/dashboards' component={TaskDashboard} />
+        </Switch>
+      </Router>
     </div>
   );
 }
