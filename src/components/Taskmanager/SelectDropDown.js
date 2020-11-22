@@ -21,7 +21,7 @@ export default function SelectDropdown(props) {
     <div className='dropdown-container' onClick={showDropDown}>
       {mainIsSelected ? (
         <div>
-          <div className='dropdown-menu'>Menu</div>
+          <div className='dropdown-menu'>Category</div>
 
           <div
             className='first-option'
@@ -63,7 +63,7 @@ export default function SelectDropdown(props) {
           {optionSelected ? (
             optionSelected
           ) : (
-            <div className='dropdown-menu'>Menu</div>
+            <div className='dropdown-menu'>Category</div>
           )}
         </div>
       )}

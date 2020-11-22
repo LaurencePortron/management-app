@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Welcome from './components/Home/Welcome';
-import TaskDashboard from './components/TaskDashboard';
+import TaskDashboard from './components/Taskmanager/TaskDashboard';
 import Home from './components/icons/Home';
 import ProgressChart from './components/ProgressChart';
 import WishList from './components/WishList';
@@ -20,7 +20,7 @@ function App() {
               <Link to='/dashboard'>Dashboards</Link>
             </li>
             <li>
-              <Link to='/charts'>Progress</Link>
+              <Link to='/progress'>Progress</Link>
             </li>
             <li>
               <Link to='/wishlist'>WishList</Link>
@@ -30,7 +30,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/dashboard' component={TaskDashboard} />
-          <Route exact path='/charts' component={ProgressChart} />
+          <Route exact path='/progress' component={ProgressChart} />
           <Route exact path='/wishlist' component={WishList} />
         </Switch>
       </Router>
