@@ -1,11 +1,11 @@
 import './App.css';
 // import TaskListNavigation from './components/TaskListNavigation';
-import SelectDropdown from './components/SelectDropDown';
+import TaskDashboard from './components/TaskDashboard';
 
 function App() {
   return (
     <div className='App'>
-      <SelectDropdown />
+      <TaskDashboard />
     </div>
   );
 }

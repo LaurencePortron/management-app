@@ -1,9 +1,12 @@
+.dropdown-container {
+}
+
 .dropdown-menu {
   background-color: #eeeeee;
   color: #393e46;
   padding: 10px;
   margin-right: 280px;
-  margin-left: 250px;
+  margin-left: 280px;
   border-radius: 20px;
   margin-bottom: 5px;
 }
@@ -13,7 +16,7 @@
   color: #59886b;
   padding: 10px;
   margin-right: 280px;
-  margin-left: 250px;
+  margin-left: 280px;
   border-radius: 20px;
   margin-bottom: 5px;
 }
@@ -23,7 +26,7 @@
   color: #394867;
   padding: 10px;
   margin-right: 280px;
-  margin-left: 250px;
+  margin-left: 280px;
   border-radius: 20px;
   margin-bottom: 5px;
 }
@@ -33,7 +36,7 @@
   color: #ffc85c;
   padding: 10px;
   margin-right: 280px;
-  margin-left: 250px;
+  margin-left: 280px;
   margin-bottom: 5px;
   border-radius: 20px;
 }

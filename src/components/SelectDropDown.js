@@ -18,7 +18,7 @@ export default function SelectDropdown(props) {
   };
 
   return (
-    <div onClick={showDropDown}>
+    <div className='dropdown-container' onClick={showDropDown}>
       {mainIsSelected ? (
         <div>
           <div className='dropdown-menu'>Menu</div>

@@ -1,0 +1,46 @@
+h1 {
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+
+.task-dashboard {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 50%;
+  align-self: center;
+}
+
+.task-dashboard thead,
+.task-dashboard tr {
+  text-align: center;
+  background-color: #394867;
+  border: 1px solid white;
+  color: #ffffff;
+  font-size: 20px;
+}
+.task-dashboard th,
+.task-dashboard td {
+  padding: 12px 15px;
+  border: 1px solid white;
+}
+
+.task-dashboard tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.task-dashboard tbody tr:nth-of-type(even) {
+  background-color: #394867;
+}
+
+.task-dashboard tbody tr:last-of-type {
+  border-bottom: 2px solid #14274e;
+}
+
+span {
+  display: flex;
+  justify-content: left;
+  font-size: 20px;
+  cursor: pointer;
+}
