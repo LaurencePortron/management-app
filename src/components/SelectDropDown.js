@@ -21,11 +21,10 @@ export default function SelectDropdown(props) {
     <div onClick={showDropDown}>
       {mainIsSelected ? (
         <div>
-          <div className='dropdown-menu'>
-            <strong>Menu</strong>
-          </div>
+          <div className='dropdown-menu'>Menu</div>
 
           <div
+            className='first-option'
             onClick={(e) => {
               e.stopPropagation();
               selectOption(e);
@@ -37,29 +36,35 @@ export default function SelectDropdown(props) {
           </div>
 
           <div
+            className='second-option'
             onClick={(e) => {
               e.stopPropagation();
               selectOption(e);
               resetDropDown();
             }}
-            id='cool'
+            id='Random'
           >
-            cool
+            Random
           </div>
           <div
+            className='third-option'
             onClick={(e) => {
               e.stopPropagation();
               selectOption(e);
               resetDropDown();
             }}
-            id='amazing'
+            id='Outdoors'
           >
-            amazing
+            Outdoors
           </div>
         </div>
       ) : (
         <div>
-          <strong>{optionSelected ? optionSelected : <div>Menu</div>}</strong>
+          {optionSelected ? (
+            optionSelected
+          ) : (
+            <div className='dropdown-menu'>Menu</div>
+          )}
         </div>
       )}
     </div>

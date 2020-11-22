@@ -1,6 +1,39 @@
 .dropdown-menu {
-  border: 1px solid black;
+  background-color: #eeeeee;
+  color: #393e46;
   padding: 10px;
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-right: 280px;
+  margin-left: 250px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.first-option {
+  background-color: #bedbbb;
+  color: #59886b;
+  padding: 10px;
+  margin-right: 280px;
+  margin-left: 250px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.second-option {
+  background-color: #9ba4b4;
+  color: #394867;
+  padding: 10px;
+  margin-right: 280px;
+  margin-left: 250px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.third-option {
+  background-color: #fff8c1;
+  color: #ffc85c;
+  padding: 10px;
+  margin-right: 280px;
+  margin-left: 250px;
+  margin-bottom: 5px;
+  border-radius: 20px;
 }
