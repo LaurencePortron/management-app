@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import SelectDropDown from './SelectDropDown';
 import './Taskdashboard.css';
+// import StatusDropdown from './StatusDropdown';
 
 export default function Taskdashboard() {
-  const tableRows = [''];
-  const [addTableRows, setAddTableRow] = useState(tableRows);
-  const [clickToAddRows, setClickToAddRows] = useState(false);
+  const [tableRows, setTableRow] = useState([]);
 
-  const handleAddTableRow = () => {
-    setAddTableRow(['']);
+  const addTableRow = () => {
+    setTableRow([...tableRows, '']);
   };
-
-  const handleClickToAddRows = () => {
-    setClickToAddRows(true);
+  const removeTableRow = () => {
+    setTableRow(tableRows.slice(0, -1));
   };
 
   return (
@@ -32,25 +30,24 @@ export default function Taskdashboard() {
             <td>
               <SelectDropDown />
             </td>
-            <td>b</td>
+            <td></td>
             <td>c</td>
             <td>d</td>
           </tr>
-          {clickToAddRows
-            ? addTableRows.map((addTableRow) => {
-                return (
-                  <tr>
-                    <td key={addTableRows}>
-                      {addTableRows} <SelectDropDown />
-                    </td>
-                    <td key={addTableRows}>{addTableRows}</td>
-                    <td key={addTableRows}>{addTableRows}</td>
-                    <td key={addTableRows}>{addTableRows}</td>
-                  </tr>
-                );
-              })
-            : ''}
-          <span onClick={handleClickToAddRows}>&#43;</span>
+          {tableRows.map((tableRow, index) => {
+            return (
+              <tr key={index}>
+                <td>
+                  {tableRow} <SelectDropDown />
+                </td>
+                <td>{tableRow}</td>
+                <td>{tableRow}</td>
+                <td>{tableRow}</td>
+              </tr>
+            );
+          })}
+          <span onClick={addTableRow}>&#43;</span>
+          <span onClick={removeTableRow}>-</span>
         </tbody>
       </table>
     </>

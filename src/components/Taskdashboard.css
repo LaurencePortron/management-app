@@ -4,12 +4,8 @@ h1 {
 }
 
 .task-dashboard {
-  border-collapse: collapse;
+  display: inline;
   margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  width: 50%;
-  align-self: center;
 }
 
 .task-dashboard thead,
@@ -18,7 +14,8 @@ h1 {
   background-color: #394867;
   border: 1px solid white;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 10px;
+  font-family: sans-serif;
 }
 .task-dashboard th,
 .task-dashboard td {
@@ -43,4 +40,14 @@ span {
   justify-content: left;
   font-size: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    text-align: center;
+    font-family: arial, sans-serif;
+  }
+  .task-dashboard {
+    width: 50%;
+  }
 }
