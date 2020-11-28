@@ -4,7 +4,7 @@ import Welcome from './components/Home/Welcome';
 import TaskDashboard from './components/Taskmanager/TaskDashboard';
 import Home from './components/icons/Home';
 import ProgressChart from './components/ProgressChart';
-import WishList from './components/WishList';
+import WishList from './components/Wishlist/WishList';
 
 function App() {
   return (
