@@ -2,22 +2,16 @@ import React, { useState } from 'react';
 import SelectDropDown from './SelectDropDown';
 import './Taskdashboard.css';
 import StatusDropdown from './StatusDropdown';
-import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
+import Calendar from './Calendar';
 
 export default function Taskdashboard() {
   const [tableRows, setTableRow] = useState([]);
-  const [selectedDay, setSelectedDay] = useState(null);
 
   const addTableRow = () => {
     setTableRow([...tableRows, '']);
   };
   const removeTableRow = () => {
     setTableRow(tableRows.slice(0, -1));
-  };
-
-  const handleDayClick = (day, { selected }) => {
-    setSelectedDay(selected ? undefined : day);
   };
 
   return (
@@ -42,15 +36,7 @@ export default function Taskdashboard() {
               <StatusDropdown />
             </td>
             <td>
-              <DayPicker
-                selectedDays={selectedDay}
-                onDayClick={handleDayClick}
-              />
-              <p>
-                {selectedDay
-                  ? selectedDay.toLocaleDateString()
-                  : 'Please select a day 👻'}
-              </p>
+              <Calendar />
             </td>
           </tr>
           {tableRows.map((tableRow, index) => {
@@ -60,8 +46,13 @@ export default function Taskdashboard() {
                   {tableRow} <SelectDropDown />
                 </td>
                 <td>{tableRow}</td>
-                <td>{tableRow}</td>
-                <td>{tableRow}</td>
+                <td>
+                  {tableRow} <StatusDropdown />
+                </td>
+                <td>
+                  {tableRow}
+                  <Calendar />
+                </td>
               </tr>
             );
           })}

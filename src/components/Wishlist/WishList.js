@@ -5,7 +5,7 @@ export default function WishList(props) {
   const [typedWishes, setTypedWishes] = useState(''); // what you type in your input as a wish
   const [addedWishes, setAddedWishes] = useState([]); // array that takes all the wishes you typed
 
-  const addToWishList = () => {
+  const addWish = () => {
     if (typedWishes !== '') {
       setAddedWishes([...addedWishes, typedWishes]);
     }
@@ -26,13 +26,12 @@ export default function WishList(props) {
     <div>
       <label htmlFor='wish-list'>You can add your wishes here 👇🏼</label>
       <input type='text' value={typedWishes} onChange={handleInput}></input>
-      <button onClick={addToWishList}>Add Wish</button>
+      <button onClick={addWish}>Add Wish</button>
       {addedWishes.map((wish, i) => (
         <div key={i}>
           <p className='wishes'>{wish}</p>
-
           <button name={wish} onClick={(event) => removeWish(event)}>
-            Remove Wish
+            Remove
           </button>
         </div>
       ))}
