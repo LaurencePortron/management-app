@@ -2,37 +2,35 @@ h1 {
   text-align: center;
   font-family: arial, sans-serif;
 }
+.remove-add-button-container {
+  display: flex;
+}
+.remove-add-button-container:hover {
+  display: flex;
+}
 
 .task-dashboard {
   display: inline;
-  margin: 25px 0;
+  margin: 25%;
 }
 
 .task-dashboard thead,
 .task-dashboard tr {
   text-align: center;
-  background-color: #394867;
+  background-color: white;
   border: 1px solid white;
-  color: #ffffff;
-  font-size: 10px;
+  color: #394867;
+  font-size: 20px;
   font-family: sans-serif;
 }
 .task-dashboard th,
 .task-dashboard td {
   padding: 12px 15px;
-  border: 1px solid white;
+  border: 1px solid #394867;
 }
 
 .task-dashboard tbody tr {
   border-bottom: 1px solid #dddddd;
-}
-
-.task-dashboard tbody tr:nth-of-type(even) {
-  background-color: #394867;
-}
-
-.task-dashboard tbody tr:last-of-type {
-  border-bottom: 2px solid #14274e;
 }
 
 @media screen and (max-width: 700px) {

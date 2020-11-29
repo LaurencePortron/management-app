@@ -3,6 +3,7 @@ import SelectDropDown from './SelectDropDown';
 import './Taskdashboard.css';
 import StatusDropdown from './StatusDropdown';
 import Calendar from './Calendar';
+import Filter from './Filter';
 
 export default function Taskdashboard() {
   const [tableRows, setTableRow] = useState([]);
@@ -17,6 +18,9 @@ export default function Taskdashboard() {
   return (
     <>
       <h1>Overview</h1>
+      <div>
+        <Filter />
+      </div>
       <table className='task-dashboard'>
         <thead>
           <tr>
@@ -24,6 +28,7 @@ export default function Taskdashboard() {
             <th>Sub-category</th>
             <th>Status</th>
             <th>Timeline</th>
+            <th>Duration</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +43,9 @@ export default function Taskdashboard() {
             <td>
               <Calendar />
             </td>
+            <td>Duration</td>
           </tr>
+
           {tableRows.map((tableRow, index) => {
             return (
               <tr key={index}>
@@ -53,17 +60,20 @@ export default function Taskdashboard() {
                   {tableRow}
                   <Calendar />
                 </td>
+                <td>Duration</td>
               </tr>
             );
           })}
+          <div className='remove-add-button-container'>
+            <div className='plus' onClick={addTableRow}>
+              +
+            </div>
+            <div className='minus' onClick={removeTableRow}>
+              -
+            </div>
+          </div>
         </tbody>
       </table>
-      <div className='plus' onClick={addTableRow}>
-        +
-      </div>
-      <div className='minus' onClick={removeTableRow}>
-        -
-      </div>
     </>
   );
 }

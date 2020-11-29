@@ -2,8 +2,8 @@ import './App.css';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Welcome from './components/Home/Welcome';
 import TaskDashboard from './components/Taskmanager/TaskDashboard';
-import Home from './components/icons/Home';
-import ProgressChart from './components/ProgressChart';
+import Home from './components/images/Home';
+import ProgressChart from './components/Progress/ProgressChart';
 import WishList from './components/Wishlist/WishList';
 
 function App() {

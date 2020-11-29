@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Divide } from 'react-feather';
 import './WishList.css';
 
 export default function WishList(props) {
@@ -24,15 +25,27 @@ export default function WishList(props) {
 
   return (
     <div>
-      <label htmlFor='wish-list'>You can add your wishes here 👇🏼</label>
-      <input type='text' value={typedWishes} onChange={handleInput}></input>
-      <button onClick={addWish}>Add Wish</button>
+      <div className='input-label-container'>
+        <label htmlFor='wish-list'>You can add your wishes here 👇🏼</label>
+        <input type='text' value={typedWishes} onChange={handleInput}></input>
+        <button className='addWish-button' onClick={addWish}>
+          +
+        </button>
+      </div>
+
       {addedWishes.map((wish, i) => (
-        <div key={i}>
-          <p className='wishes'>{wish}</p>
-          <button name={wish} onClick={(event) => removeWish(event)}>
-            Remove
-          </button>
+        <div className='wish-container' key={i}>
+          <p className='wishes'>
+            {wish}
+            <div className='wish-description'>Description</div>
+            <div
+              className='remove-button'
+              name={wish}
+              onClick={(event) => removeWish(event)}
+            >
+              -
+            </div>
+          </p>
         </div>
       ))}
     </div>

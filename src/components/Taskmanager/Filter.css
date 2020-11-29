@@ -1,0 +1,8 @@
+.filter {
+  display: flex;
+  border: 1px solid #394867;
+  padding: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: #394867;
+}
