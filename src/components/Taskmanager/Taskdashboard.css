@@ -8,6 +8,15 @@ h1 {
 .remove-add-button-container:hover {
   display: flex;
 }
+.plus {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.minus {
+  font-size: 20px;
+  cursor: pointer;
+}
 
 .task-dashboard {
   display: inline;

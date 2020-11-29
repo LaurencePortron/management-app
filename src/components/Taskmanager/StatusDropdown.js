@@ -1,40 +1,37 @@
 import React from 'react';
+import './SelectDropDown.css';
 
 export default function StatusDropDown(props) {
-  const { showDropDown, selectOption, resetDropDown } = props;
-
   return (
-    <div className='dropdown-container' onClick={showDropDown}>
-      <div>
-        <div className='dropdown-menu'>Status</div>
-
-        <div
-          className='first-option'
-          onClick={(selectOption, resetDropDown)}
-          id='Project'
-        >
-          Started
+    <div className='dropdown-container' onClick={props.showStatusDropDown}>
+      {props.subCategorySelected ? (
+        <div>
+          <div className='dropdown-menu'>Status</div>
+          {props.subCategories.map((subCategory, index) => {
+            return (
+              <div
+                className='first-option'
+                id={subCategory}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  props.selectOptionSubCategory(e);
+                  props.resetStatusDropDown();
+                }}
+              >
+                {subCategory}
+              </div>
+            );
+          })}
         </div>
-
-        <div
-          className='second-option'
-          onClick={(selectOption, resetDropDown)}
-          id='Random'
-        >
-          In Progress
+      ) : (
+        <div>
+          {props.subCategoryOptionSelected ? (
+            props.subCategoryOptionSelected
+          ) : (
+            <div className='dropdown-menu'>Status</div>
+          )}
         </div>
-        <div
-          className='third-option'
-          onClick={(selectOption, resetDropDown)}
-          id='Outdoors'
-        >
-          Done
-        </div>
-      </div>
-
-      <div>
-        <div className='dropdown-menu'>Status</div>
-      </div>
+      )}
     </div>
   );
 }

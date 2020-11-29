@@ -5,6 +5,7 @@ import TaskDashboard from './components/Taskmanager/TaskDashboard';
 import Home from './components/images/Home';
 import ProgressChart from './components/Progress/ProgressChart';
 import WishList from './components/Wishlist/WishList';
+import DropDown from './components/Taskmanager/DropDown';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             <li>
               <Link to='/wishlist'>WishList</Link>
             </li>
+            <li>
+              <Link to='/testdropdown'>TestDropDown</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
@@ -32,6 +36,7 @@ function App() {
           <Route path='/dashboard' component={TaskDashboard} />
           <Route exact path='/progress' component={ProgressChart} />
           <Route exact path='/wishlist' component={WishList} />
+          <Route exact path='/testdropdown' component={DropDown} />
         </Switch>
       </Router>
     </div>

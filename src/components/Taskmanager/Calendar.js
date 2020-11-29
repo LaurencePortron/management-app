@@ -5,7 +5,6 @@ import 'react-day-picker/lib/style.css';
 export default function Calendar() {
   return (
     <div>
-      <p>Select start date:</p>
       <DayPickerInput onDayChange={(day) => console.log(day)} />
     </div>
   );

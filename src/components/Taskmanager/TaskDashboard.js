@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import SelectDropDown from './SelectDropDown';
+// import SelectDropDown from './SelectDropDown';
 import './Taskdashboard.css';
-import StatusDropdown from './StatusDropdown';
+// import StatusDropdown from './StatusDropdown';
 import Calendar from './Calendar';
 import Filter from './Filter';
+import CategoryDropDown from './CategoryDropDown';
+import StatusDropDown from './StatusDropdown';
+import DropDown from './DropDown';
 
-export default function Taskdashboard() {
+export default function Taskdashboard(props) {
   const [tableRows, setTableRow] = useState([]);
 
   const addTableRow = () => {
@@ -34,14 +37,12 @@ export default function Taskdashboard() {
         <tbody>
           <tr>
             <td>
-              <SelectDropDown />
+              <DropDown />
             </td>
             <td></td>
+            <td>ok</td>
             <td>
-              <StatusDropdown />
-            </td>
-            <td>
-              <Calendar />
+              <DropDown />
             </td>
             <td>Duration</td>
           </tr>
@@ -50,11 +51,11 @@ export default function Taskdashboard() {
             return (
               <tr key={index}>
                 <td>
-                  {tableRow} <SelectDropDown />
+                  {tableRow} <CategoryDropDown />
                 </td>
                 <td>{tableRow}</td>
                 <td>
-                  {tableRow} <StatusDropdown />
+                  {tableRow} <StatusDropDown />
                 </td>
                 <td>
                   {tableRow}

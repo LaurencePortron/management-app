@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Divide } from 'react-feather';
 import './WishList.css';
 
 export default function WishList(props) {

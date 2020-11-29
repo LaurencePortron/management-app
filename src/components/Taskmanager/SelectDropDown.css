@@ -1,33 +1,19 @@
-/* .dropdown-container {
+.dropdown-container {
   width: 100%;
+  cursor: pointer;
 }
 
 .first-option {
   background-color: #bedbbb;
   color: #59886b;
-  padding: 10px;
-  margin-right: 280px;
-  margin-left: 280px;
-  border-radius: 20px;
-  margin-bottom: 5px;
 }
 
 .second-option {
   background-color: #9ba4b4;
   color: #394867;
-  padding: 10px;
-  margin-right: 280px;
-  margin-left: 280px;
-  border-radius: 20px;
-  margin-bottom: 5px;
 }
 
 .third-option {
   background-color: #fff8c1;
   color: #ffc85c;
-  padding: 10px;
-  margin-right: 280px;
-  margin-left: 280px;
-  margin-bottom: 5px;
-  border-radius: 20px;
-} */
+}
