@@ -6,7 +6,7 @@ export default function CategoryDropDown(props) {
     <div className='dropdown-container' onClick={props.showDropDown}>
       {props.categorySelected ? (
         <div>
-          <div className='dropdown-menu'>Category</div>
+          <div className='category-dropdown-menu'>Category</div>
           {props.categories.map((category, index) => {
             return (
               <div

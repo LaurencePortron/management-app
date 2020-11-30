@@ -1,24 +1,24 @@
 import React from 'react';
 import './SelectDropDown.css';
 
-export default function StatusDropDown(props) {
+export default function SubCategoryDropDown(props) {
   return (
     <div className='dropdown-container' onClick={props.showDropDown}>
       {props.categorySelected ? (
         <div>
-          <div className='status-dropdown-menu'>Status</div>
-          {props.statusCategories.map((statusCategory, index) => {
+          <div className='status-dropdown-menu'>SubCategory</div>
+          {props.subCategories.map((subCategory, index) => {
             return (
               <div
                 className='first-option'
-                id={statusCategory}
+                id={subCategory}
                 onClick={(e) => {
                   e.stopPropagation();
                   props.selectOption(e);
                   props.resetDropDown();
                 }}
               >
-                {statusCategory}
+                {subCategory}
               </div>
             );
           })}
@@ -28,7 +28,7 @@ export default function StatusDropDown(props) {
           {props.categoryOptionSelected ? (
             props.categoryOptionSelected
           ) : (
-            <div className='dropdown-menu'>Status</div>
+            <div className='dropdown-menu'>SubCategory</div>
           )}
         </div>
       )}
