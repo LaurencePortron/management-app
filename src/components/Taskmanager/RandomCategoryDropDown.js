@@ -1,26 +1,24 @@
 import React from 'react';
-import ProjectCategoryDropDown from './ProjectCategoryDropDown';
 import './SelectDropDown.css';
 
-export default function CategoryDropDown(props) {
+export default function RandomCategoryDropDown(props) {
   return (
     <div className='dropdown-container' onClick={props.showDropDown}>
       {props.categorySelected ? (
         <div>
-          <div className='category-dropdown-menu'>Category</div>
-          {props.categories.map((category, index) => {
+          <div className='status-dropdown-menu'>RandomCategory</div>
+          {props.randomCategories.map((randomCategory, index) => {
             return (
               <div
                 className='first-option'
-                id={category}
+                id={randomCategory}
                 onClick={(e) => {
                   e.stopPropagation();
                   props.selectOption(e);
                   props.resetDropDown();
-                  console.log(category);
                 }}
               >
-                {category}
+                {randomCategory}
               </div>
             );
           })}
@@ -30,7 +28,7 @@ export default function CategoryDropDown(props) {
           {props.categoryOptionSelected ? (
             props.categoryOptionSelected
           ) : (
-            <div className='dropdown-menu'>Category</div>
+            <div className='dropdown-menu'>RandomCategory</div>
           )}
         </div>
       )}

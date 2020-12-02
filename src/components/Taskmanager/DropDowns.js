@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import CategoryDropDown from './CategoryDropDown';
 import StatusDropDown from './StatusDropdown';
-import SubCategoryDropDown from './SubCategoryDropDown';
+import ProjectCategoryDropDown from './ProjectCategoryDropDown';
+import RandomCategoryDropDown from './RandomCategoryDropDown';
 
-export default function DropDown(props) {
+export default function DropDowns(props) {
   const [categorySelected, setCategorySelected] = useState(false);
   const [categoryOptionSelected, setCategoryOptionSelected] = useState('');
   const categories = ['Project', 'Random', 'Outdoors'];
-  const subCategories = ['Personal', 'Professional'];
+  const projectsCategories = ['Personal', 'Professional'];
+  const randomCategories = ['Mega', 'Super', 'OMG'];
   const statusCategories = ['Started', 'In Progress', 'Done'];
 
   const showDropDown = () => {
@@ -36,20 +38,34 @@ export default function DropDown(props) {
       </div>
     );
   }
+
   if (props.isSubCategory) {
     return (
-      <div>
-        <SubCategoryDropDown
-          showDropDown={showDropDown}
-          selectOption={selectOption}
-          resetDropDown={resetDropDown}
-          categorySelected={categorySelected}
-          categoryOptionSelected={categoryOptionSelected}
-          subCategories={subCategories}
-        />
-      </div>
+      <ProjectCategoryDropDown
+        showDropDown={showDropDown}
+        selectOption={selectOption}
+        resetDropDown={resetDropDown}
+        categorySelected={categorySelected}
+        categoryOptionSelected={categoryOptionSelected}
+        projectsCategories={projectsCategories}
+      />
     );
   }
+
+  if (props.isSubCategory) {
+    return (
+      <RandomCategoryDropDown
+        showDropDown={showDropDown}
+        selectOption={selectOption}
+        resetDropDown={resetDropDown}
+        categorySelected={categorySelected}
+        categoryOptionSelected={categoryOptionSelected}
+        projectsCategories={projectsCategories}
+        randomCategories={randomCategories}
+      />
+    );
+  }
+
   if (props.isStatus) {
     return (
       <div>
@@ -64,4 +80,5 @@ export default function DropDown(props) {
       </div>
     );
   }
+  return null;
 }

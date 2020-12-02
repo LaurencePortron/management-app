@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Taskdashboard.css';
 import Calendar from './Calendar';
 import Filter from './Filter';
-import DropDown from './DropDown';
+import DropDowns from './DropDowns';
 
 export default function Taskdashboard(props) {
   const [tableRows, setTableRow] = useState([]);
@@ -33,13 +33,13 @@ export default function Taskdashboard(props) {
         <tbody>
           <tr>
             <td>
-              <DropDown isCategory={true} />
+              <DropDowns isCategory={true} />
             </td>
             <td>
-              <DropDown isSubCategory={true} />
+              <DropDowns isSubCategory={true} />
             </td>
             <td>
-              <DropDown isStatus={true} />
+              <DropDowns isStatus={true} />
             </td>
             <td>
               <Calendar />
@@ -51,11 +51,13 @@ export default function Taskdashboard(props) {
             return (
               <tr key={index}>
                 <td>
-                  {tableRow} <DropDown />
+                  {tableRow} <DropDowns isCategory={true} />
                 </td>
-                <td>{tableRow}</td>
                 <td>
-                  {tableRow} <DropDown />
+                  {tableRow} <DropDowns isSubCategory={true} />
+                </td>
+                <td>
+                  {tableRow} <DropDowns isStatus={true} />
                 </td>
                 <td>
                   {tableRow}
