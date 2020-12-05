@@ -24,30 +24,32 @@ export default function WishList(props) {
   };
 
   return (
-    <div>
-      <div className='input-label-container'>
-        <label htmlFor='wish-list'>You can add your wishes here 👇🏼</label>
-        <input type='text' value={typedWishes} onChange={handleInput}></input>
-        <div className='addWish-button' onClick={addWish}>
-          <PlusSquare />
+    <div className='wish-task-container'>
+      <div className='wish-component'>
+        <div className='input-label-container'>
+          <label htmlFor='wish-list'>You can add your wishes here 👇🏼</label>
+          <input type='text' value={typedWishes} onChange={handleInput}></input>
+          <div className='addWish-button' onClick={addWish}>
+            <PlusSquare />
+          </div>
         </div>
-      </div>
 
-      {addedWishes.map((wish, i) => (
-        <div className='wish-container' key={i}>
-          <p className='wishes'>
-            {wish}
-            <div className='wish-description'>Description</div>
-            <div
-              className='remove-button'
-              name={wish}
-              onClick={(event) => removeWish(event)}
-            >
-              -
-            </div>
-          </p>
-        </div>
-      ))}
+        {addedWishes.map((wish, i) => (
+          <div className='wish-container' key={i}>
+            <p className='wishes'>
+              {wish}
+              <div className='wish-description'>Description</div>
+              <div
+                className='remove-button'
+                name={wish}
+                onClick={(event) => removeWish(event)}
+              >
+                -
+              </div>
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

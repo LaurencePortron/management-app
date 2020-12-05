@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProgressChart.css';
 // import '~react-vis/dist/style';
 import {
   XYPlot,
@@ -10,7 +11,7 @@ import {
 
 export default function ProgressChart() {
   return (
-    <div>
+    <div className='chart'>
       <XYPlot width={300} height={300}>
         <HorizontalGridLines />
         <LineSeries

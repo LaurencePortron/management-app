@@ -1,3 +1,7 @@
+.wish-task-container {
+  display: flex;
+  flex-direction: column;
+}
 h1 {
   text-align: center;
   font-family: arial, sans-serif;
@@ -6,30 +10,16 @@ h1 {
   display: flex;
 }
 
-/* .minus {
-  position: absolute;
-  font-size: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  border: 1px black solid;
-  border-radius: 50%;
-} */
-
-/* .plus:hover {
-  position: absolute;
-  font-size: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-} */
-
 .minus {
   font-size: 20px;
   cursor: pointer;
 }
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-.task-dashboard {
-  display: inline;
-  margin: 25%;
+  margin-top: 20px;
 }
 
 .task-dashboard thead,

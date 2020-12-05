@@ -1,5 +1,4 @@
 import React from 'react';
-import './SelectDropDown.css';
 
 export default function ProjectCategoryDropDown(props) {
   return (

@@ -1,3 +1,11 @@
+.wish-task-container {
+  display: flex;
+  flex-direction: column;
+}
+.wish-component {
+  display: flex;
+  flex-direction: column;
+}
 .input-label-container {
   display: flex;
   justify-content: center;
