@@ -2,11 +2,34 @@ import React, { useState } from 'react';
 import './Taskdashboard.css';
 import Calendar from './Calendar';
 import Filter from './Filter';
-import DropDowns from './DropDowns';
+import CategoryDropDown from './CategoryDropDown';
+import ProjectCategoryDropDown from './ProjectCategoryDropDown';
+import RandomCategoryDropDown from './RandomCategoryDropDown';
+import StatusDropDown from './StatusDropdown';
+import Trash2 from '../images/Trash2';
+import PlusCircle from '../images/PlusCircle';
 
 export default function Taskdashboard(props) {
+  // Table states
   const [tableRows, setTableRow] = useState([]);
 
+  // DropDown states
+  const [categoryOptionSelected, setCategoryOptionSelected] = useState('');
+  const [subCategoryOptionSelected, setSubsCategoryOptionSelected] = useState(
+    ''
+  );
+  const [statusOptionSelected, setStatusCategoryOptionSelected] = useState('');
+  const [categorySelected, setCategorySelected] = useState(false);
+  const [subCategorySelected, setSubCategorySelected] = useState(false);
+  const [statusCategorySelected, setStatusCategorySelected] = useState(false);
+
+  // DropDown values
+  const categories = ['Project', 'Random', 'Outdoors'];
+  const projectsCategories = ['Personal', 'Professional'];
+  const randomCategories = ['Mega', 'Super', 'OMG'];
+  const statusCategories = ['Started', 'In Progress', 'Done'];
+
+  // Table functions
   const addTableRow = () => {
     setTableRow([...tableRows, '']);
   };
@@ -14,12 +37,49 @@ export default function Taskdashboard(props) {
     setTableRow(tableRows.slice(0, -1));
   };
 
+  // Dropdown functions
+  // Show Dropdown
+  const showDropDown = () => {
+    setCategorySelected(true);
+  };
+
+  const showSubDropDown = () => {
+    setSubCategorySelected(true);
+  };
+
+  const showStatusDropDown = () => {
+    setStatusCategorySelected(true);
+  };
+
+  // Change initial value to selected value
+  const selectOption = (e) => {
+    setCategoryOptionSelected(e.target.id);
+  };
+
+  const selectSubOption = (e) => {
+    setSubsCategoryOptionSelected(e.target.id);
+  };
+
+  const selectSatusOption = (e) => {
+    setStatusCategoryOptionSelected(e.target.id);
+  };
+
+  // Reset DropDown
+  const resetDropDown = () => {
+    setCategorySelected(false);
+  };
+
+  const resetSubDropDown = () => {
+    setSubCategorySelected(false);
+  };
+
+  const resetStatusDropDown = () => {
+    setStatusCategorySelected(false);
+  };
+
   return (
-    <>
-      <h1>Overview</h1>
-      <div>
-        <Filter />
-      </div>
+    <div>
+      <div></div>
       <table className='task-dashboard'>
         <thead>
           <tr>
@@ -33,13 +93,54 @@ export default function Taskdashboard(props) {
         <tbody>
           <tr>
             <td>
-              <DropDowns isCategory={true} />
+              <div>
+                <CategoryDropDown
+                  showDropDown={showDropDown}
+                  selectOption={selectOption}
+                  resetDropDown={resetDropDown}
+                  categorySelected={categorySelected}
+                  categoryOptionSelected={categoryOptionSelected}
+                  categories={categories}
+                />
+              </div>
             </td>
             <td>
-              <DropDowns isSubCategory={true} />
+              {categoryOptionSelected === 'Project' ? (
+                <ProjectCategoryDropDown
+                  showSubDropDown={showSubDropDown}
+                  selectSubOption={selectSubOption}
+                  resetSubDropDown={resetSubDropDown}
+                  subCategorySelected={subCategorySelected}
+                  subCategoryOptionSelected={subCategoryOptionSelected}
+                  projectsCategories={projectsCategories}
+                />
+              ) : (
+                ''
+              )}
+              {categoryOptionSelected === 'Random' ? (
+                <RandomCategoryDropDown
+                  showSubDropDown={showSubDropDown}
+                  resetSubDropDown={resetSubDropDown}
+                  selectSubOption={selectSubOption}
+                  subCategorySelected={subCategorySelected}
+                  subCategoryOptionSelected={subCategoryOptionSelected}
+                  randomCategories={randomCategories}
+                />
+              ) : (
+                ''
+              )}
             </td>
             <td>
-              <DropDowns isStatus={true} />
+              <div>
+                <StatusDropDown
+                  showStatusDropDown={showStatusDropDown}
+                  selectSatusOption={selectSatusOption}
+                  resetStatusDropDown={resetStatusDropDown}
+                  statusCategorySelected={statusCategorySelected}
+                  statusOptionSelected={statusOptionSelected}
+                  statusCategories={statusCategories}
+                />
+              </div>
             </td>
             <td>
               <Calendar />
@@ -51,32 +152,73 @@ export default function Taskdashboard(props) {
             return (
               <tr key={index}>
                 <td>
-                  {tableRow} <DropDowns isCategory={true} />
+                  {tableRow}
+                  <CategoryDropDown
+                    showDropDown={showDropDown}
+                    selectOption={selectOption}
+                    resetDropDown={resetDropDown}
+                    categorySelected={categorySelected}
+                    categoryOptionSelected={categoryOptionSelected}
+                    categories={categories}
+                  />
                 </td>
                 <td>
-                  {tableRow} <DropDowns isSubCategory={true} />
+                  {tableRow}
+                  {categoryOptionSelected === 'Project' ? (
+                    <ProjectCategoryDropDown
+                      showSubDropDown={showSubDropDown}
+                      selectSubOption={selectSubOption}
+                      resetSubDropDown={resetSubDropDown}
+                      subCategorySelected={subCategorySelected}
+                      subCategoryOptionSelected={subCategoryOptionSelected}
+                      projectsCategories={projectsCategories}
+                    />
+                  ) : (
+                    ''
+                  )}
+                  {categoryOptionSelected === 'Random' ? (
+                    <RandomCategoryDropDown
+                      showSubDropDown={showSubDropDown}
+                      resetSubDropDown={resetSubDropDown}
+                      selectSubOption={selectSubOption}
+                      subCategorySelected={subCategorySelected}
+                      subCategoryOptionSelected={subCategoryOptionSelected}
+                      randomCategories={randomCategories}
+                    />
+                  ) : (
+                    ''
+                  )}
                 </td>
                 <td>
-                  {tableRow} <DropDowns isStatus={true} />
+                  {tableRow}
+                  <StatusDropDown
+                    showStatusDropDown={showStatusDropDown}
+                    selectSatusOption={selectSatusOption}
+                    resetStatusDropDown={resetStatusDropDown}
+                    statusCategorySelected={statusCategorySelected}
+                    statusOptionSelected={statusOptionSelected}
+                    statusCategories={statusCategories}
+                  />
                 </td>
                 <td>
                   {tableRow}
                   <Calendar />
                 </td>
                 <td>Duration</td>
+                <div className='minus' onClick={removeTableRow}>
+                  <Trash2 />
+                </div>
               </tr>
             );
           })}
+
           <div className='remove-add-button-container'>
             <div className='plus' onClick={addTableRow}>
-              +
-            </div>
-            <div className='minus' onClick={removeTableRow}>
-              -
+              <PlusCircle />
             </div>
           </div>
         </tbody>
       </table>
-    </>
+    </div>
   );
 }

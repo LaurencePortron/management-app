@@ -3,8 +3,8 @@ import './SelectDropDown.css';
 
 export default function ProjectCategoryDropDown(props) {
   return (
-    <div className='dropdown-container' onClick={props.showDropDown}>
-      {props.categorySelected ? (
+    <div className='dropdown-container' onClick={props.showSubDropDown}>
+      {props.subCategorySelected ? (
         <div>
           <div className='status-dropdown-menu'>ProjectCategory</div>
           {props.projectsCategories.map((projectCategory, index) => {
@@ -12,10 +12,11 @@ export default function ProjectCategoryDropDown(props) {
               <div
                 className='first-option'
                 id={projectCategory}
+                key={projectCategory}
                 onClick={(e) => {
                   e.stopPropagation();
-                  props.selectOption(e);
-                  props.resetDropDown();
+                  props.selectSubOption(e);
+                  props.resetSubDropDown();
                 }}
               >
                 {projectCategory}
@@ -25,8 +26,8 @@ export default function ProjectCategoryDropDown(props) {
         </div>
       ) : (
         <div>
-          {props.categoryOptionSelected ? (
-            props.categoryOptionSelected
+          {props.subCategoryOptionSelected ? (
+            props.subCategoryOptionSelected
           ) : (
             <div className='dropdown-menu'>ProjectCategory</div>
           )}

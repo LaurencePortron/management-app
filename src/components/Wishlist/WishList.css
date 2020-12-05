@@ -4,10 +4,7 @@
   margin-top: 100px;
 }
 .addWish-button {
-  margin-left: 10px;
-  color: #394867;
-  border: 1px solid #394867;
-  background-color: transparent;
+  cursor: pointer;
 }
 .wish-container {
   display: flex;

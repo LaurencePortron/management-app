@@ -3,8 +3,8 @@ import './SelectDropDown.css';
 
 export default function RandomCategoryDropDown(props) {
   return (
-    <div className='dropdown-container' onClick={props.showDropDown}>
-      {props.categorySelected ? (
+    <div className='dropdown-container' onClick={props.showSubDropDown}>
+      {props.subCategorySelected ? (
         <div>
           <div className='status-dropdown-menu'>RandomCategory</div>
           {props.randomCategories.map((randomCategory, index) => {
@@ -12,10 +12,11 @@ export default function RandomCategoryDropDown(props) {
               <div
                 className='first-option'
                 id={randomCategory}
+                key={randomCategory}
                 onClick={(e) => {
                   e.stopPropagation();
-                  props.selectOption(e);
-                  props.resetDropDown();
+                  props.selectSubOption(e);
+                  props.resetSubDropDown();
                 }}
               >
                 {randomCategory}
@@ -25,8 +26,8 @@ export default function RandomCategoryDropDown(props) {
         </div>
       ) : (
         <div>
-          {props.categoryOptionSelected ? (
-            props.categoryOptionSelected
+          {props.subCategoryOptionSelected ? (
+            props.subCategoryOptionSelected
           ) : (
             <div className='dropdown-menu'>RandomCategory</div>
           )}

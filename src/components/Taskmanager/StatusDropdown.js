@@ -3,8 +3,8 @@ import './SelectDropDown.css';
 
 export default function StatusDropDown(props) {
   return (
-    <div className='dropdown-container' onClick={props.showDropDown}>
-      {props.categorySelected ? (
+    <div className='dropdown-container' onClick={props.showStatusDropDown}>
+      {props.statusCategorySelected ? (
         <div>
           <div className='status-dropdown-menu'>Status</div>
           {props.statusCategories.map((statusCategory, index) => {
@@ -12,10 +12,11 @@ export default function StatusDropDown(props) {
               <div
                 className='first-option'
                 id={statusCategory}
+                key={statusCategory}
                 onClick={(e) => {
                   e.stopPropagation();
-                  props.selectOption(e);
-                  props.resetDropDown();
+                  props.selectSatusOption(e);
+                  props.resetStatusDropDown();
                 }}
               >
                 {statusCategory}
@@ -25,8 +26,8 @@ export default function StatusDropDown(props) {
         </div>
       ) : (
         <div>
-          {props.categoryOptionSelected ? (
-            props.categoryOptionSelected
+          {props.statusOptionSelected ? (
+            props.statusOptionSelected
           ) : (
             <div className='dropdown-menu'>Status</div>
           )}

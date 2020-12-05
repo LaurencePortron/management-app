@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './WishList.css';
+import PlusSquare from '../images/PlusSquare';
 
 export default function WishList(props) {
   const [typedWishes, setTypedWishes] = useState(''); // what you type in your input as a wish
@@ -27,9 +28,9 @@ export default function WishList(props) {
       <div className='input-label-container'>
         <label htmlFor='wish-list'>You can add your wishes here 👇🏼</label>
         <input type='text' value={typedWishes} onChange={handleInput}></input>
-        <button className='addWish-button' onClick={addWish}>
-          +
-        </button>
+        <div className='addWish-button' onClick={addWish}>
+          <PlusSquare />
+        </div>
       </div>
 
       {addedWishes.map((wish, i) => (

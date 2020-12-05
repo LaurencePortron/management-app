@@ -5,14 +5,23 @@ h1 {
 .remove-add-button-container {
   display: flex;
 }
-.remove-add-button-container:hover {
-  display: flex;
-}
-.plus {
+
+/* .minus {
+  position: absolute;
   font-size: 20px;
   margin-right: 10px;
   cursor: pointer;
-}
+  border: 1px black solid;
+  border-radius: 50%;
+} */
+
+/* .plus:hover {
+  position: absolute;
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+} */
+
 .minus {
   font-size: 20px;
   cursor: pointer;
@@ -26,15 +35,16 @@ h1 {
 .task-dashboard thead,
 .task-dashboard tr {
   text-align: center;
-  background-color: white;
-  border: 1px solid white;
   color: #394867;
-  font-size: 20px;
   font-family: sans-serif;
+}
+
+.task-dashboard th {
+  background-color: #aeb4c0;
 }
 .task-dashboard th,
 .task-dashboard td {
-  padding: 12px 15px;
+  padding: 15px;
   border: 1px solid #394867;
 }
 

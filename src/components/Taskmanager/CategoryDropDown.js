@@ -1,5 +1,4 @@
 import React from 'react';
-import ProjectCategoryDropDown from './ProjectCategoryDropDown';
 import './SelectDropDown.css';
 
 export default function CategoryDropDown(props) {
@@ -13,11 +12,11 @@ export default function CategoryDropDown(props) {
               <div
                 className='first-option'
                 id={category}
+                key={category}
                 onClick={(e) => {
                   e.stopPropagation();
                   props.selectOption(e);
                   props.resetDropDown();
-                  console.log(category);
                 }}
               >
                 {category}
