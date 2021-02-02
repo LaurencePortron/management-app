@@ -4,16 +4,10 @@
 }
 
 .first-option {
-  background-color: #bedbbb;
-  color: #59886b;
-}
-
-.second-option {
-  background-color: #9ba4b4;
-  color: #394867;
-}
-
-.third-option {
-  background-color: #fff8c1;
-  color: #ffc85c;
+  background-color: #cfd3ce;
+  color: #34626c;
+  font-size: 15px;
+  border-radius: 80px;
+  margin: 3px;
+  padding: 10px; /* top, right, bottom, left */
 }

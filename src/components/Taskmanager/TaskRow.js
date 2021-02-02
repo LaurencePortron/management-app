@@ -3,6 +3,9 @@ import CategoryDropDown from './CategoryDropDown';
 import ProjectCategoryDropDown from './ProjectCategoryDropDown';
 import RandomCategoryDropDown from './RandomCategoryDropDown';
 import StatusDropDown from './StatusDropdown';
+import DurationDropDown from './DurationDropDown';
+import Filter from './Filter';
+
 import Trash2 from '../images/Trash2';
 import Calendar from './Calendar';
 import './Taskdashboard.css';
@@ -14,15 +17,24 @@ export default function TaskRow(props) {
     ''
   );
   const [statusOptionSelected, setStatusCategoryOptionSelected] = useState('');
+
+  const [durationOptionSelected, setDurationOptionSelected] = useState('');
+
   const [categorySelected, setCategorySelected] = useState(false);
   const [subCategorySelected, setSubCategorySelected] = useState(false);
   const [statusCategorySelected, setStatusCategorySelected] = useState(false);
+
+  const [durationCategorySelected, setDurationCategorySelected] = useState(
+    false
+  );
 
   // DropDown values
   const categories = ['Project', 'Random', 'Outdoors'];
   const projectsCategories = ['Personal', 'Professional'];
   const randomCategories = ['Mega', 'Super', 'OMG'];
   const statusCategories = ['Started', 'In Progress', 'Done'];
+
+  const durationCategories = ['30min', '60min', '90min', '150min'];
 
   // Dropdown functions
   // Show Dropdown
@@ -38,6 +50,10 @@ export default function TaskRow(props) {
     setStatusCategorySelected(true);
   };
 
+  const showDurationDropDown = () => {
+    setDurationCategorySelected(true);
+  };
+
   // Change initial value to selected value
   const selectOption = (e) => {
     setCategoryOptionSelected(e.target.id);
@@ -49,6 +65,9 @@ export default function TaskRow(props) {
 
   const selectSatusOption = (e) => {
     setStatusCategoryOptionSelected(e.target.id);
+  };
+  const selectDurationOption = (e) => {
+    setDurationOptionSelected(e.target.id);
   };
 
   // Reset DropDown
@@ -62,6 +81,10 @@ export default function TaskRow(props) {
 
   const resetStatusDropDown = () => {
     setStatusCategorySelected(false);
+  };
+
+  const resetDurationDropDown = () => {
+    setDurationCategorySelected(false);
   };
 
   return (
@@ -117,7 +140,16 @@ export default function TaskRow(props) {
       <td>
         <Calendar />
       </td>
-      <td>Duration</td>
+      <td>
+        <DurationDropDown
+          showDurationDropDown={showDurationDropDown}
+          selectDurationOption={selectDurationOption}
+          resetDurationDropDown={resetDurationDropDown}
+          durationCategorySelected={durationCategorySelected}
+          durationOptionSelected={durationOptionSelected}
+          durationCategories={durationCategories}
+        />
+      </td>
       <div className='minus' onClick={props.removeTableRow}>
         <Trash2 />
       </div>

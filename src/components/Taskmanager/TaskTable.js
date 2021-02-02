@@ -9,7 +9,7 @@ export default function TaskTable(props) {
   const addTableRow = () => {
     setTableRow([...tableRows, '']);
   };
-  const removeTableRow = () => {
+  const removeTableRow = (id) => {
     setTableRow(tableRows.slice(0, -1));
   };
 
@@ -18,11 +18,8 @@ export default function TaskTable(props) {
       {tableRows.map((tableRow, index) => {
         return <TaskRow key={index} removeTableRow={removeTableRow} />;
       })}
-
-      <div className='remove-add-button-container'>
-        <div className='plus' onClick={addTableRow}>
-          <PlusCircle />
-        </div>
+      <div className='plus' onClick={addTableRow}>
+        <PlusCircle />
       </div>
     </>
   );

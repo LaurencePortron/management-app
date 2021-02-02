@@ -1,8 +1,24 @@
-.filter {
+.filter-table-container {
   display: flex;
-  border: 1px solid #394867;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #34626c;
   padding: 20px;
-  margin-left: 25%;
-  margin-right: 25%;
-  color: #394867;
+  color: #34626c;
+}
+
+p,
+label {
+  font: 1rem 'Arial', sans-serif;
+}
+
+input {
+  margin: 0.4rem;
 }
